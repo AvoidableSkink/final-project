@@ -4,5 +4,5 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    url(r'^details/(?P<id>\w{0, 100})/$', views.details)
+    url(r'^details/(?P<id>[0-9]+)/$', views.details)
 ]
