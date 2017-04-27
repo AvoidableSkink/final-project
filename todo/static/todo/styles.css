@@ -1,3 +1,42 @@
-a {
-    color: green;
+li a {
+    font-size: 35px;
+    color: Turquoise;
+}
+
+a:hover {
+    size: 150%;
+    font-weight: bold;
+}
+
+h1 {
+    font-family: Copperplate Gothic Light;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 0px;
+    font-size: 65px;
+    color: salmon;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    background: url("images/Spring-Image.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    font-family: Lucida Console;
+}
+
+#main {
+    background-color: white;
+    box-shadow: 0 0 75px 50px white;
+}
+
+.inside {
+    text-align-last: left;
+    color: Turquoise;
+    font-size: 25px;
 }
