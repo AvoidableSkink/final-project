@@ -3,11 +3,12 @@
     <head>
         <meta charset="utf-8">
         {% load staticfiles %}
-        <link rel="stylesheet" type="text/css" href="{% static 'todo/styles.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static "todo/styles.css" %}" />
+        <script type="text/javascript" src="{% static "todo/javascript/bugs.js" %}"></script>
         <title></title>
     </head>
     <body>
         <header>
             <h1>ToDo</h1>
         </header>
-        <img id="emotion" src="{% static "images/ladybug.png" %}" width="42" height="42" onclick="changeImg()"/>
+        <img id="emotion" src="{% static "todo/images/ladybug.png" %}" width="42" height="42" onclick="changeImg()"/>
