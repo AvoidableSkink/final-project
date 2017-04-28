@@ -26,5 +26,6 @@ def add(request):
     else:
         return render(request, 'add.html')
         
-        
-        
+def remove(request, id):
+    Todo.objects.get(id=id).delete()
+    return redirect('/todo')
