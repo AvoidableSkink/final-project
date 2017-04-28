@@ -25,7 +25,12 @@ def add(request):
         return redirect('/todo')
     else:
         return render(request, 'add.html')
-        
-def remove(request, id):
+       
+def remove(request):
+    todos = Todo.objects.all()
+    context = {'todos':todos}
+    return render(request, 'remove.html', context)
+
+def remove_todo(request, id):
     Todo.objects.get(id=id).delete()
     return redirect('/todo')

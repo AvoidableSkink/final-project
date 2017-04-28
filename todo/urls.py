@@ -6,5 +6,6 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^details/(?P<id>[0-9]+)/$', views.details),
     url(r'^add/$', views.add, name='add'),
-    url(r'^remove/(?P<id>[0-9]+)/$', views.remove),
+    url(r'^remove/$', views.remove),
+    url(r'^remove/(?P<id>[0-9]+)/$', views.remove_todo),
 ]
