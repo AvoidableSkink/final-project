@@ -1,17 +1,26 @@
-function changeImg()
-{
-var x = Math.floor(Math.random()*500);
-var y = Math.floor(Math.random()*500);
+function changeImg(me){  
+  var elem = me;   
+  var pos = 0;
+  var id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 340) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.top = pos + 'px'; 
+      elem.style.left = pos + 'px'; 
+    }
+  }
+}
 
+// floor(Math.random()*500);
+//     var y = Math.floor(Math.random()*500);
 
-var obj = document.getElementById("bug");
+//     var obj = me;
 
-obj.style.top = x + "px";
-obj.style.left = y + "px";
+//     // obj.style.top = x + "px";
+//     // obj.style.left = y + "px";
 
-
- }
- 
 function randomlyPlace(){
   var w=document.body.offsetWidth;
   var h=document.body.offsetHeight;
