@@ -1,19 +1,53 @@
-function changeImg(me){  
-  var elem = me;   
-  var pos = 0;
-  var id = setInterval(frame, 5);
-  function frame() {
-    if (pos == 340) {
-      clearInterval(id);
-    } else {
-      pos++; 
-      elem.style.top = pos + 'px'; 
-      elem.style.left = pos + 'px'; 
+var frameCount = 60;
+var timer;
+var points;
+var currentFrame;
+
+function move(me){
+    var point = points[currentFrame++];
+    me.style.left = point.x + "px";
+    me.style.top = point.y + "px";
+
+    // refire the timer until out-of-points
+    if (currentFrame < points.length) {
+        timer = setTimeout(move(me), 2000 / 60);
     }
-  }
 }
 
-// floor(Math.random()*500);
+function linePoints(x1, y1, x2, y2, frames) {
+    var dx = x2 - x1;
+    var dy = y2 - y1;
+    var incrementX = dx / frames;
+    var incrementY = dy / frames;
+    var a = new Array();
+
+    a.push({
+        x: x1,
+        y: y1
+    });
+    for (var frame = 0; frame < frames - 1; frame++) {
+        a.push({
+            x: x1 + (incrementX * frame),
+            y: y1 + (incrementY * frame)
+        });
+    }
+    a.push({
+        x: x2,
+        y: y2
+    });
+    return (a);
+}
+
+function clicked(me) {
+    var newX = Math.floor(Math.random()*1000);
+    var newY = Math.floor(Math.random()*500);
+
+    // Put your mousedown stuff here
+    points = linePoints(me.style.left, me.style.top, newX, newY, frameCount);
+    currentFrame = 0;
+    move(me);
+}
+    // var x = Math.floor(Math.random()*500);
 //     var y = Math.floor(Math.random()*500);
 
 //     var obj = me;
