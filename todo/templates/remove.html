@@ -1,7 +1,9 @@
 {% include 'partials/header.html' %}
-    {% for todo in todos %}
-      <a href="/todo/remove/{{todo.id}}" onclick="return confirm('Are you sure you wish to delete this item?')">{{todo.title}}</a>
-      <br/>
-    {% endfor %}
+    <div id="listItem">
+        {% for todo in todos %}
+          <a href="/todo/remove/{{todo.id}}" onclick="return confirm('Are you sure you wish to delete this item?')">{{todo.title}}</a>
+          <br/>
+        {% endfor %}
+    </div>
     <a href="/todo">Back to ToDo List</a>
 {% include 'partials/footer.html' %}

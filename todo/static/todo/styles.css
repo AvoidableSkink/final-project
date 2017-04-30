@@ -1,26 +1,38 @@
-#bug{position: absolute;}
-
-#listItem {
-    padding-top: .5cm;
-}
-
-#listItem a{
-    font-size: 35px;
-    color: Turquoise;
-}
-
 a:hover {
     size: 150%;
     font-weight: bold;
+}
+
+label {
+    color: turquoise;
+    font-size: 23px;
+}
+
+input {
+    border-width: 3px;
+}
+
+textarea {
+    border-width: 3px;
+    border-style: inset;
 }
 
 h1 {
     font-family: Copperplate Gothic Light;
     padding-left: 50px;
     padding-right: 50px;
-    padding-bottom: 0px;
     font-size: 65px;
     color: salmon;
+}
+
+h2 {
+    font-size: 33px;
+    color: turquoise;
+}
+
+p {
+    font-size: 20px;
+    color: turquoise;
 }
 
 ul {
@@ -41,8 +53,14 @@ body {
     box-shadow: 0 0 75px 50px white;
 }
 
-/*.inside {*/
-/*    text-align-last: left;*/
-/*    color: Turquoise;*/
-/*    font-size: 25px;*/
-/*}*/
+#bug{position: absolute;}
+
+#listItem {
+    padding-top: .5cm;
+    padding-bottom: .5cm;
+}
+
+#listItem a{
+    font-size: 35px;
+    color: Turquoise;
+}
