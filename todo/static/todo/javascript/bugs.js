@@ -10,11 +10,9 @@ function move(me){
     me.style.left = point.x + "px";
     me.style.top = point.y + "px";
     
-    console.log(me.style.left);
-    
     // refire the timer until out-of-points
     if (currentFrame < points.length) {
-        setTimeout(move(me), 8000);
+        setTimeout(function() {move(me);}, 1000 / 60);
     }
 }
 
