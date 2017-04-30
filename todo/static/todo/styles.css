@@ -1,6 +1,10 @@
 #bug{position: absolute;}
 
-a {
+#listItem {
+    padding-top: .5cm;
+}
+
+#listItem a{
     font-size: 35px;
     color: Turquoise;
 }

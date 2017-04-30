@@ -3,8 +3,11 @@
     <br/>
     <a href="/todo/remove/">Remove ToDo Item</a>
     <br/>
+    
+    <div id="listItem">
     {% for todo in todos %}
         <a href="/todo/details/{{todo.id}}">{{todo.title}}</a>
         <br/>
     {% endfor %}
+    </div>
 {% include 'partials/footer.html' %}

@@ -9,4 +9,4 @@ class Todo(models.Model):
     notes = models.TextField()
     createdAt = models.DateTimeField(default=datetime.now(), blank=True)
     def __str__(self):
-        return self.notes
+        return self.title
