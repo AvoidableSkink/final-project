@@ -1,16 +1,20 @@
-var frameCount = 60;
+//move the bugs when clicked
 var timer;
 var points;
 var currentFrame;
+var frameCount = 60;
 
 function move(me){
     var point = points[currentFrame++];
+    
     me.style.left = point.x + "px";
     me.style.top = point.y + "px";
-
+    
+    console.log(me.style.left);
+    
     // refire the timer until out-of-points
     if (currentFrame < points.length) {
-        timer = setTimeout(move(me), 2000 / 60);
+        setTimeout(move(me), 8000);
     }
 }
 
@@ -25,6 +29,7 @@ function linePoints(x1, y1, x2, y2, frames) {
         x: x1,
         y: y1
     });
+
     for (var frame = 0; frame < frames - 1; frame++) {
         a.push({
             x: x1 + (incrementX * frame),
@@ -41,49 +46,45 @@ function linePoints(x1, y1, x2, y2, frames) {
 function clicked(me) {
     var newX = Math.floor(Math.random()*1000);
     var newY = Math.floor(Math.random()*500);
+    
+    var currentX = parseInt(me.style.left, 10);
+    var currentY = parseInt(me.style.top, 10);
 
     // Put your mousedown stuff here
-    points = linePoints(me.style.left, me.style.top, newX, newY, frameCount);
+    points = linePoints(currentX, currentY, newX, newY, frameCount);
     currentFrame = 0;
     move(me);
 }
-    // var x = Math.floor(Math.random()*500);
-//     var y = Math.floor(Math.random()*500);
-
-//     var obj = me;
-
-//     // obj.style.top = x + "px";
-//     // obj.style.left = y + "px";
 
 function randomlyPlace(){
-  var w=document.body.offsetWidth;
-  var h=document.body.offsetHeight;
-  var rd=document.getElementsByTagName('img');
-
-for(var c=0;c<rd.length;c++) {
-if(rd[c].className=='random') {
-   var xCoord=Math.floor(Math.random()*w);
-   var yCoord=Math.floor(Math.random()*h);
-
-if(xCoord>=w-rd[c].offsetWidth-10){
-   xCoord=w-rd[c].offsetWidth-10;
- }
-if(xCoord<=10){
-   xCoord=10;
- }
-
-if(yCoord>=h-rd[c].offsetHeight-10){
-   yCoord=h-rd[c].offsetHeight-10;
- }
-if(yCoord<=10){
-   yCoord=250;
- }
-
-   rd[c].style.left=xCoord+'px';
-   rd[c].style.top=yCoord+'px';
-   }
-  }
- }
+    var w=document.body.offsetWidth;
+    var h=document.body.offsetHeight;
+    var rd=document.getElementsByTagName('img');
+    
+    for(var c=0;c<rd.length;c++) {
+        if(rd[c].className=='random') {
+            var xCoord=Math.floor(Math.random()*w);
+            var yCoord=Math.floor(Math.random()*h);
+        
+            if(xCoord>=w-rd[c].offsetWidth-10){
+               xCoord=w-rd[c].offsetWidth-10;
+        }
+        if(xCoord<=10){
+        xCoord=10;
+        }
+    
+        if(yCoord>=h-rd[c].offsetHeight-10){
+        yCoord=h-rd[c].offsetHeight-10;
+        }
+        if(yCoord<=10){
+        yCoord=250;
+        }
+    
+        rd[c].style.left=xCoord+'px';
+        rd[c].style.top=yCoord+'px';
+        }
+    }
+}
 window.addEventListener?
 window.addEventListener('load',randomlyPlace,false):
 window.attachEvent('onload',randomlyPlace);
