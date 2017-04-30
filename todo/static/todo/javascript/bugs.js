@@ -1,5 +1,4 @@
 //move the bugs when clicked
-var timer;
 var points;
 var currentFrame;
 var frameCount = 60;
